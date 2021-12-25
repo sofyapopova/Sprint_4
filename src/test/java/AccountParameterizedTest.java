@@ -1,9 +1,11 @@
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import static org.junit.Assert.assertEquals;
 
+@DisplayName("Parameterized tests of checkNameToEmboss method")
 @RunWith(Parameterized.class)
 public class AccountParameterizedTest {
 
@@ -31,6 +33,7 @@ public class AccountParameterizedTest {
         };
     }
 
+    @DisplayName("Test that checkNameToEmboss method works correct")
     @Test
     public void checkNameToEmbossWorksCorrect() {
 
