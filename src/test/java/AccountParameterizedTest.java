@@ -18,6 +18,7 @@ public class AccountParameterizedTest {
     @Parameterized.Parameters
     public static Object[] getData() {
         return new Object[][]{
+                {null, false},
                 {"D Y", true},
                 {"Dan", false},
                 {"Dan ", false},
