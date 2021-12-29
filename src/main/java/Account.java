@@ -1,4 +1,5 @@
 import io.qameta.allure.Step;
+import java.util.regex.Pattern;
 
 public class Account {
 
@@ -15,15 +16,8 @@ public class Account {
             return false;
         }
 
-        boolean isLengthValid = (name.length() >= 3) && (name.length() <= 19);
+        String nameFormat = "(?=.{3,19}$)([A-Za-z]+(?= {1}).[A-Za-z]+)";
+        return Pattern.matches(nameFormat, name);
 
-        int spaceIndex = name.indexOf(" ");
-
-        boolean isSpacesValid = (spaceIndex != 0) &&
-                (spaceIndex != -1) &&
-                (spaceIndex != name.length() - 1) &&
-                (spaceIndex == name.lastIndexOf(" "));
-
-        return isLengthValid && isSpacesValid;
     }
 }
